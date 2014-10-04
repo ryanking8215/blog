@@ -6,7 +6,7 @@ tags:
 ## 第一次
 第一次使用hexo，一开始没有填deploy,然后直接`hexo deploy`在本地部署。
 之后再填了deploy信息，但是在`hexo deploy`时报
-```bash
+``` bash
 On branch gh-pages
 nothing to commit, working directory clean
 error: src refspec master does not match any.
