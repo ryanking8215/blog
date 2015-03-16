@@ -1,7 +1,4 @@
-.DS_Store
-Thumbs.db
-db.json
-debug.log
-node_modules/
-public/
-.deploy/
+output/
+pelican-themes/
+__pycache__/
+cache/
