@@ -44,5 +44,6 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 #THEME = 'pelican-themes/pelican-bootstrap3'
-THEME = 'pelican-themes/simple-bootstrap'
+#THEME = 'pelican-themes/simple-bootstrap'
 #THEME = 'pelican-themes/plumage'
+THEME = 'theme'

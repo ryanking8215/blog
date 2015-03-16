@@ -1,6 +1,6 @@
 Title: 抽象工厂模式 
 Date: 2014-10-04 22:13:40
-Category: tech 
+Category: Tech 
 Tags: 设计模式
 Slug: abstract-factory-dp
 Summary:

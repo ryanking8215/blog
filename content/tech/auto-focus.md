@@ -1,6 +1,6 @@
 title:  自动聚焦算法实现
 date: 2012-03-15 17:24:35
-category: tech 
+category: Tech 
 tags: autofocus
 Slug: auto-focus
 Summary: 效果还行，当然还有改进的空间...
