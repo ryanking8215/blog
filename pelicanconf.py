@@ -43,7 +43,7 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-#THEME = 'pelican-themes/pelican-bootstrap3'
+THEME = 'pelican-themes/pelican-bootstrap3'
 #THEME = 'pelican-themes/simple-bootstrap'
 #THEME = 'pelican-themes/plumage'
-THEME = 'theme'
+#THEME = 'theme'
