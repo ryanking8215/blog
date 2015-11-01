@@ -1,6 +1,6 @@
 title:  Live555源码分析
 date: 2014-10-04 22:13:35
-category: tech 
+category: Tech 
 tags: live555
 Slug: live555-analyze
 Summary: 不定时更新...

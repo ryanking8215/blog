@@ -1,4 +1,4 @@
 output/
-pelican-themes/
 __pycache__/
 cache/
+theme/

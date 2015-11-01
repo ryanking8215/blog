@@ -1,9 +1,9 @@
-Title: django下一个多对一关系的对象的建立页面
+Title: django下通过form创建model对象如何隐藏不必要的field
 Category: Tech
 Date: 2015-10-25 10:00:00
 Tags: python,django
-Slug: django-many-to-one-create-view
-Summary: 提供了2种方法
+Slug: django-form-create-model-hidden-field
+Summary: 由一个一对多关系由form创建model对象想到的。 提供了2种方法。
 ---
 
 # 简述
@@ -45,7 +45,6 @@ class SCreateView(CreateView):
 ```
 
 
-
 ## 方法2
 使用`SignalObjectMixin`和`FormView`的组合，`SignalObjectMixin`是为了获取`A`的对象，FormView用于处理form的get和post。特别是post，我们的Form不需要有`a field`，在form_valid()里，通过`form.save(commit=False)`来创建一个S对象，但是该对象还没有持久化，然后为该对象的`a field`赋值为self.object.pk(通过SignalObjectMixin)即可，然后调用s.save()即可。
 
@@ -72,10 +71,13 @@ class SCreateView(SingleObjectMixin, FormView):
         self.object = self.get_object()
         return super(SCreateView, self).post(request, *args, **kwargs)
 
-
       def form_valid(self, form):
+          # commit为False，创建一个未持久化对象
           s = form.save(commit=False)
+          # 为s的隐藏field赋值
           s.a = self.object
+          # 持久化
           s.save()
+          # 后续处理
           return super.form_valid(self, form)
 ```

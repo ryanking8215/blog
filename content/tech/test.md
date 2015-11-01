@@ -1,6 +1,6 @@
 Title: 测试标题
 Date: 2015-03-06 10:20
-Category: tech
+Category: Tech
 Tags: python,pelican 
 Slug: test-pelican
 Author: Ryan King

@@ -1,10 +1,10 @@
 Title: 使用n管理nodejs的版本
 Date: 2014-11-10 21:20
-Category: tech
+Category: Tech
 Tags: nodejs
 Slug: n-nodejs-version
 Author: Ryan King
-Summary: 使用n来切换nodejs的版本，多版本共存
+Summary: nodejs多版本共存
 
 想尝试一下ec6的generator和co,为了不影响原有的开发环境
 使用n来管理nodejs的版本。

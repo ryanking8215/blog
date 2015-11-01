@@ -1,7 +1,7 @@
 Title: 不要strip ko文件
 Date: 2014-06-04 22:20
-Category: tech
-Tags: linux
+Category: Tech
+Tags: linux, c
 Slug: dont-strip-ko
 Author: Ryan King
 Summary: 闹乌龙啦...

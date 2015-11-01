@@ -1,7 +1,7 @@
 Title: python ctypes
-Category: tech
+Category: Tech
 Date: 2015-09-20 14:50:54
-Tags: python ctypes
+Tags: python,ctypes
 Slug: python-ctypes
 Summary: 使用ctypes封装libpcap时的一些心得
 ---

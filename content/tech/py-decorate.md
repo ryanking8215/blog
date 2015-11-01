@@ -1,5 +1,5 @@
 Title: 资源，认证，鉴权和python的装饰器
-Category: tech
+Category: Tech
 Date: 2015-04-12 16:50:54
 Tags: python
 Slug: py-decorate

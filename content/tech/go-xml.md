@@ -1,7 +1,7 @@
 Title:  golang and xml
 Date: 2014-10-04 22:13:33
-Category: tech
-Tags: golang
+Category: Tech
+Tags: golang, xml
 Slug: golang-and-xml
 Summary: golang使用xml的方法，比如有些协议里根据command不同，content也不同，如何处理呢？
 

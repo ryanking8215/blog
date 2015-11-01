@@ -1,6 +1,6 @@
 Title:  使用backtrace跟踪栈信息
 Date: 2012-05-04 22:20
-Category: tech
+Category: Tech
 Tags: linux, debug
 Slug: backtrace
 Author: Ryan King

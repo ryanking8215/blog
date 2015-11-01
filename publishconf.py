@@ -11,7 +11,7 @@ sys.path.append(os.curdir)
 from pelicanconf import *
 
 SITEURL = 'ryanking8215.github.io'
-# RELATIVE_URLS = False
+#RELATIVE_URLS = False
 RELATIVE_URLS = True
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
@@ -23,3 +23,7 @@ DELETE_OUTPUT_DIRECTORY = True
 
 #DISQUS_SITENAME = ""
 #GOOGLE_ANALYTICS = ""
+
+DUOSHUO_SITENAME = "ryanking8215"
+# 在duoshuo_scripts.html里无法使用SITEURL, 只好再生成一个变量
+DUOSHUO_SITEURL = SITEURL

@@ -1,7 +1,7 @@
 Title: 用户加密方法
 Date: 2014-10-05 17:20:36
-Category: tech
-Tags:
+Category: Tech
+Tags: encrypto
 Slug: user-encrypto
 Summary:
 

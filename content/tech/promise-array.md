@@ -1,6 +1,6 @@
 Title: promise处理数组
 Date: 2014-10-05 16:47:03
-Category: tech
+Category: Tech
 Tags: javascript
 Slug: promise-process-array
 Summary: 使用promise处理数组的方法和要注意的问题

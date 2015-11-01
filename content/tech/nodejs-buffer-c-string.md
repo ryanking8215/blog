@@ -1,6 +1,6 @@
 Title:  nodejs的buffer和c string
 Date: 2014-10-31 19:13:42
-Category: tech
+Category: Tech
 Tags: nodejs
 Slug: nodejs-buffer-cstring
 Author: Ryan King

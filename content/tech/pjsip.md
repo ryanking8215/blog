@@ -1,7 +1,7 @@
 Title: pjsip的一些问题
 Date: 2013-06-05 17:20
-Category: tech
-Tags: linux lib
+Category: Tech
+Tags: linux,c
 Slug: pjsip-stuff
 Author: Ryan King
 Summary: pjsip使用过程中总结的问题，不定时更新...

@@ -1,6 +1,6 @@
 Title: git远程的仓库和分支操作
 Date: 2014-10-05 17:00:20
-Category: tech
+Category: Tech
 Tags: git
 Slug: git-remote-summary
 Summary: 简单操作，简单记录

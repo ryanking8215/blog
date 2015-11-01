@@ -1,5 +1,5 @@
 Title: promise要注意的地方
-Category: tech
+Category: Tech
 Date: 2014-10-05 16:50:54
 Tags: javascript
 Slug: promise-stuff
