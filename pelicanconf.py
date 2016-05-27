@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'RyanKing'
-SITENAME = "RyanKing's Blog"
+SITENAME = "RyanKing"
 #SITEURL = 'http://ryanking8215.github.io'
 #SITEURL = ''
 
@@ -24,23 +24,24 @@ AUTHOR_FEED_RSS = None
 # my setup
 #DELETE_OUTPUT_DIRECTORY = False
 DEFAULT_DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
-SLUGIFY_SOURCE = 'basename'
+SLUGIFY_SOURCE = 'title'
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2}).*'
 OUTPUT_RETENTION = ['.git','.gitignore']
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (('V2EX', 'http://www.v2ex.com/member/ryanking8215'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('github', 'https://github.com/ryanking8215'),)
 
 DEFAULT_PAGINATION = 10
+
+MAIN_MENU = True
+MENUITEMS = (('ARCHIVES', '/archives.html'), ('Categories', '/categories.html'), ('TAG', '/tags.html'), )
+SITETITLE = SITENAME
+SITESUBTITLE = "嵌入式/python开发工程师"
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-THEME = 'theme/pelican-elegant'
+THEME = 'theme/Flex'

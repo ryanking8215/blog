@@ -1,5 +1,7 @@
 output/
 __pycache__/
 cache/
-theme/
+#theme/
 .DS_Store
+.git
+*.swp
