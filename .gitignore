@@ -1,6 +1,4 @@
-output/
-__pycache__/
-cache/
 .DS_Store
 .git
 *.swp
+public/
