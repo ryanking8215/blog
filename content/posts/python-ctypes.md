@@ -4,7 +4,13 @@ date: 2015-09-20T14:50:54+08:00
 categories: ["Tech"]
 tags: ["python","ctypes"]
 slug: python-ctypes
-summary: 使用ctypes封装libpcap时的一些心得
+keywords:
+  - python
+  - ctypes
+  - ctypes调用
+  - c
+  - libpcap
+description: 使用ctypes封装libpcap时的一些心得
 ---
 
 项目中需要用到python来抓网络包进行分析，看了pip有现成的pcap库，但是没用过，我使用的pcap的接口很简单，所以就想自己封装一个。

@@ -4,7 +4,11 @@ date: 2014-10-28T22:20:00+0800
 categories: ["Tech"]
 tags: ["nodejs"]
 slug: nodejs-tcp-client
-summary: 用nodejs实现一个可实用的tcp client,不只是回调那么简单。
+keywords:
+  - nodejs
+  - tcp
+  - tcp client
+description: 用nodejs实现一个可实用的tcp client,不只是回调那么简单。
 ---
 
 单看话题有点low,用nodejs撸一个tcp client不是秒秒钟的事情

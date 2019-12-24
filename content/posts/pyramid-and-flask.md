@@ -4,7 +4,14 @@ date: 2015-04-06T16:13:40+08:00
 categories: ["Tech"]
 tags: ["webframework","python"]
 slug: pyramid-and-flask
-summary: 还没到"vs."的境界，只好用"and"了, -)
+keywords:
+  - python
+  - web开发
+  - flask
+  - pyramid
+  - flask vs. pyramid
+  - web框架
+description: 两个python的web微框架的比较，还没到"vs."的境界，只好用"and"了, -)
 ---
 
 有个企业内部项目，restful api，mysql, digest authentication.

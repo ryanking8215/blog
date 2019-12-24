@@ -4,7 +4,10 @@ date: 2014-06-04T22:20:00+08:00
 categories: ["Tech"]
 tags: ["linux", "c"]
 slug: "dont-strip-ko"
-summary: "闹乌龙啦..."
+keywords:
+  - linux
+  - strip
+description: "strip ko文件后造成insmod失败"
 ---
 
 今天给嵌入式linux系统做升级包，发现升级包有点大，于是把lib下和bin下的

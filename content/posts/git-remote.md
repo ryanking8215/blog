@@ -4,7 +4,11 @@ date: 2014-10-05T17:00:20+08:00
 categories: ["Tech"]
 tags: ["git"]
 slug: git-remote-summary
-summary: 简单操作，简单记录
+keywords:
+  - git
+  - git remote
+  - 远程仓库
+description: 记录git远程仓库和分支的一些操作
 ---
 
 看了git的手册，关于remote的操作。稍微精简了一下，以供记录和记忆。

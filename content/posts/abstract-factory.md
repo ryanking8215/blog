@@ -3,6 +3,10 @@ title: "抽象工厂模式"
 date: 2014-10-04T22:13:40+08:00
 categories: ["Tech"]
 tags: ["设计模式"]
+keywords:
+  - 设计模式
+  - design pattern
+description: 简单描述抽象工厂模式
 ---
 
 简单描述之:

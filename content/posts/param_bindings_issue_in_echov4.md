@@ -1,10 +1,16 @@
 ---
-title: "Echo v4 的参数绑定问题"
+title: "Echo.v4的参数绑定问题"
 date: 2019-11-13T14:54:28+08:00
 categories: ["Tech"]
 tags: ["golang"]
 slug: param_binding_issue_of_echov4
-Summary: Echo v4.x 有一个参数绑定问题，造成restful api开发的困扰。
+keywords:
+  - Echo
+  - Echo.v4
+  - 参数绑定
+  - Restful API
+decription: Echo.v4 有一个参数绑定问题，造成restful api开发的困扰。
+
 draft: false
 ---
 
@@ -12,6 +18,7 @@ draft: false
 [Echo](https://echo.labstack.com/)是golang语言开发的，高性能, 可扩展的微型web框架。
 
 笔者在项目中一直使用Echo框架，一直是v3.x的版本，在项目达到一定阶段后，发现Echo已经发布了"v4"版本一段时间，于是想把框架升级成v4.
+到目前为止，最新的版本是`v4.11`
 
 升级之后，发现有些请求出现了问题，具体报错为:
 ```shell

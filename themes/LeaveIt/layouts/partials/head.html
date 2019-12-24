@@ -34,8 +34,6 @@
     <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{ end }}
   {{ partial "seo_schema" . }}
-  {{ partial "google_analytics" . }}
-  {{ partial "baidu_statistics" . }}
 </head>
 {{ $cdn_url := ""}}
   {{ if eq ( getenv "HUGO_ENV" ) "production" }}

@@ -3,6 +3,11 @@ title:  "使用backtrace跟踪栈信息"
 date: 2012-05-04T22:20:43+08:00
 categories: ["Tech"]
 tags: ["linux", "debug"]
+keywords:
+  - linux
+  - 调试
+  - stack
+description: 使用backtrace跟踪堆栈信息
 ---
 
 一种在嵌入式上可行的调试方法，截获SIGSEGV信号，并作backtrace()处理，把

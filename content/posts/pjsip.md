@@ -4,7 +4,11 @@ date: 2013-06-05T17:20:00+08:00
 categories: ["Tech"]
 tags: ["linux", "c"]
 slug: pjsip-stuff
-summary: pjsip使用过程中总结的问题，不定时更新...
+keywords:
+  - pjsip
+  - linux
+  - c
+description: pjsip使用过程中总结的问题，不定时更新...
 ---
 
 ## 多线程

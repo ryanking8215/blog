@@ -4,7 +4,13 @@ date: 2014-10-05T16:47:03+08:00
 categories: ["Tech"]
 tags: ["javascript"]
 slug: promise-process-array
-summary: 使用promise处理数组的方法和要注意的问题
+keywords:
+  - javascript
+  - nodejs
+  - promise
+  - array
+  - 数组
+description: 使用promise处理数组的方法和要注意的问题
 ---
 
 promise 使用bluebird，现在要求按照数组顺序启动异步任务，也即等待一个promise被settled后再执行下一个。

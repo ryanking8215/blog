@@ -4,7 +4,9 @@ date: 2014-11-10T21:20:12+08:00
 categories: ["Tech"]
 tags: ["nodejs"]
 slug: n-nodejs-version
-summary: nodejs多版本共存
+keywords:
+  - nodejs
+description: nodejs多版本共存
 ---
 
 想尝试一下ec6的generator和co,为了不影响原有的开发环境

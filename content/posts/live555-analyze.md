@@ -4,7 +4,12 @@ date: 2014-10-04T22:13:35+0800
 categories: ["Tech"]
 tags: ["live555"]
 slug: live555-analyze
-summary: 不定时更新...
+keywords:
+  - live555
+  - cpp
+  - streaming media
+  - 流媒体
+description: live555源码分析
 ---
 
 ## Source

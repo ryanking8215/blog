@@ -4,7 +4,14 @@ date: 2016-01-17T14:50:54+08:00
 categories: ["Tech"]
 tags: ["python", "cross-compile"]
 slug: python35-cross-compile
-Summary: 交叉编译python3.5.1, 用于嵌入式系统。
+keywords:
+  - python
+  - python3
+  - cross compile
+  - 交叉编译
+  - embedded system
+  - 嵌入式系统
+description: 交叉编译python3.5.1的方法, 用于嵌入式系统。
 ---
 
 有一个嵌入式项目，尝试将python3.5.1移植到该平台。还未确定是否用python开发, 先把

@@ -4,8 +4,14 @@ date: 2019-12-22T16:54:09+08:00
 categories: ["Tech"]
 tags: ["golang"]
 slug: slice_append_print
-Summary: 一个go小程序，关于slice append后的输出问题。
 draft: false
+keywords:
+  - golang
+  - slice
+  - slice append
+  - 逃逸分析
+  - escape analysis
+description: 一个go小程序，关于slice append后的输出问题。
 ---
 
 # 引子

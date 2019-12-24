@@ -4,7 +4,10 @@ date: 2014-10-04T22:13:33+08:00
 categories: ["Tech"]
 tags: ["golang", "xml"]
 slug: golang-and-xml
-summary: golang使用xml的方法，比如有些协议里根据command不同，content也不同，如何处理呢？
+keywords:
+  - golang
+  - xml
+description: golang使用xml的方法，比如有些协议里根据command不同，content也不同，如何处理呢？
 ---
 
 golang使用encoding/xml的**Marshal**和**Unmarshal**来处理xml。这个很简单，而且官网上都有例子。

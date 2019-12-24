@@ -4,7 +4,11 @@ date: 2015-10-25T10:00:00+0800
 categories: ["Tech"]
 tags: ["python", "django"]
 slug: "django-form-create-model-hidden-field"
-summary: "由一个一对多关系由form创建model对象想到的。 提供了2种方法。"
+keywords:
+  - python
+  - django
+  - web开发
+description: "由一个一对多关系由form创建model对象想到的。 提供了2种方法。"
 ---
 
 # 简述

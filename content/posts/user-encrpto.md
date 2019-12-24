@@ -4,7 +4,12 @@ date: 2014-10-05T17:20:36+08:00
 categories: ["Tech"]
 tags: ["encrypto"]
 slug: user-encrypto
-Summary:
+keywords:
+  - encryption
+  - 加密
+  - 密码
+  - password
+description: 用户密码加密方法
 ---
 
 ## 简单方法

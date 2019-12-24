@@ -2,6 +2,11 @@
 title: "PMP相关"
 date: 2019-09-09T16:48:08+08:00
 categories: ["Misc"]
+keywords:
+  - PMP
+  - 项目经理
+  - 项目管理
+description: PMP考试相关以及过程
 draft: false
 ---
 

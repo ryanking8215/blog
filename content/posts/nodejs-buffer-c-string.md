@@ -4,7 +4,11 @@ date: 2014-10-31 19:13:42
 categories: ["Tech"]
 tags: ["nodejs"]
 slug: nodejs-buffer-cstring
-summary: nodejs的buffer和c string如何转换,二进制协议用得到
+keywords:
+  - nodejs
+  - buffer
+  - c
+description: nodejs的buffer和c string如何转换,二进制协议处理用得到
 ---
 
 设备上有现成的二进制通信协议，nodejs作为客户端连接上去发送请求得到响应。

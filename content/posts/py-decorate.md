@@ -4,7 +4,11 @@ date: 2015-04-12T16:50:54+08:00
 categories: ["Tech"]
 tags: ["python"]
 slug: py-decorate
-summary: 在一个web项目中使用python装饰器的经验
+keywords:
+  - python
+  - 装饰器
+  - web开发
+description: 在一个web项目中使用python装饰器的经验
 ---
 
 # 简述

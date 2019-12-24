@@ -8,7 +8,7 @@ fi
 
 # use -D to build draft too.
 # use -t to choose theme
-hugo
+env HUGO_ENV=production hugo
 
 cd ./public
 if [ ! -d ".git" ]; then
