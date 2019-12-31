@@ -8,7 +8,7 @@ keywords:
   - nodejs
   - buffer
   - c
-description: nodejs的buffer和c string如何转换,二进制协议处理用得到
+description: nodejs的buffer和c string， 两者如何转换, 二进制协议如何处理
 ---
 
 设备上有现成的二进制通信协议，nodejs作为客户端连接上去发送请求得到响应。
