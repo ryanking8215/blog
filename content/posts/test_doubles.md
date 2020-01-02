@@ -8,7 +8,7 @@ keywords:
   - 测试
   - mock
 description: 描述了3种测试替身类型, 并且使用go实现example
-draft: true
+draft: false
 ---
 
 最近在网上看到[这篇博文](https://dev.to/milipski/test-doubles---fakes-mocks-and-stubs), 博文介绍了几种"测试替身(test doubles)"的方式和Java例子。
@@ -63,7 +63,7 @@ func (r *FakeAccountRepository) GetPasswordHash(user *User) string {
 }
 ```
 
-本人觉得这个例子作者举的不好，Fake对象应该重点突出"可工作实现"，如果还是以Repository来举例，可以是:
+本人觉得这个例子不是太贴切，Fake对象应该重点突出"可工作实现"，如果还是以Repository来举例，可以是:
 ```golang
 type AccountRepository interface {
     Find() ([]*Accounts, error)
@@ -73,7 +73,7 @@ type AccountRepository interface {
 }
 ```
 
-FakeAccountRepositry可以是in-memory的实现，来代替真正的"Database"实现。
+FakeAccountRepositry可以是"in-memory"的实现，来代替真正的"Database"实现。
 
 但是FakeAccountRepository本身是可工作的,对每个接口都能正确响应。
 
@@ -115,7 +115,7 @@ func NewGradeService(gb IGradebook) *GradeService {
 }
 
 func (s *GradeService) AverageGrades(student *Student) float32 {
-    grades := s.gb.GradeFor(student)
+    grades := s.gradebook.GradesFor(student)
     sum:= float32(0.0)
     for _, score:=range grades {
         sum+=score
@@ -152,9 +152,38 @@ func Test_GradeService_AverageGrades(t *testing.T) {
 }
 ```
 
-另外也可以使用[testify库](https://github.com/stretchr/testify)的mock包来做测试：
+还有一种方法，可以使用[testify库](https://github.com/stretchr/testify)的mock包来做测试：
 ```golang
-// TODO
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/mock"
+)
+
+var _ IGradebook = (*StubGradebook)(nil)
+
+type StubGradebook struct {
+	mock.Mock
+}
+
+func (gb *StubGradebook) GradesFor(student *Student) map[string]float32 {
+	args := gb.Called(student)
+	return args.Get(0).(map[string]float32)
+}
+
+func Test_GradeService_AverageGrades(t *testing.T) {
+	student := &Student{}
+	var stubgb StubGradebook
+	stubgb.On("GradesFor", student).Return(map[string]float32{
+		"OOP": 8,
+		"FP":  6,
+		"DB":  10,
+	})
+	svc := NewGradeService(&stubgb)
+	avg := svc.AverageGrades(student)
+	assert.EqualValues(t, 8.0, avg)
+}
 ```
 
 ## Command Query Separation
@@ -169,7 +198,7 @@ func Test_GradeService_AverageGrades(t *testing.T) {
 >
 >For testing Query type methods we should prefer use of Stubs as we can verify method’s return value. But what about Command type of methods, like method sending an e-mail? How to test them when they do not return any values? The answer is Mock - the last type of test dummy we gonna cover.
 
-这一段比较冗长，大意是类似于"GradeService"的测试用例，是一种"查询"，它不改变系统状态, 仅返回数据；还有一种叫"命令", 执行"命令"会改变系统状态，或者让系统发生了副作用，例如发送邮件。所以要将这两者区分开发，那么我们怎么来测试呢后者呢？我们总不能每次测试真的去发送邮件，针对这种情况,引入了Mock。
+这一段比较冗长，大意是类似于"GradeService"的测试用例，是一种"查询"，它不改变系统状态, 仅返回数据；还有一种叫"命令", 执行"命令"会改变系统状态，或者让系统发生了副作用，例如发送邮件。所以要将这两者区分开发，那么我们怎么来测试呢后者呢？我们总不能每次测试真的去发送邮件，针对这种情况,引入了Mock类型。
 
 ## Mock
 >Mocks are objects that register calls they receive. In test assertion we can verify on Mocks that all expected actions were performed.
@@ -178,26 +207,83 @@ Mock对象记录他们接收到的调用，在测试过程中我们通过检查M
 
 ![](/images/test_doubles/mock.png)
 
+```golang
+package mock
+
+type Closer interface {
+	Close()
+}
+
+type SecurityCentral struct {
+	window Closer
+	door   Closer
+}
+
+func NewSecurityCentral(w, d Closer) *SecurityCentral {
+	return &SecurityCentral{
+		window: w,
+		door:   d,
+	}
+}
+
+func (sc *SecurityCentral) SecurityOn() {
+	sc.window.Close()
+	sc.door.Close()
+}
+```
+
+```golang
+package mock
+
+import (
+	"github.com/stretchr/testify/mock"
+	"testing"
+)
+
+type MockCloser struct {
+	mock.Mock
+}
+
+func (c *MockCloser) Close() {
+	c.Called()
+}
+
+func Test_SecurityCentral_SecurityOn(t *testing.T) {
+	var mockWindow MockCloser
+	var mockDoor MockCloser
+
+	mockWindow.On("Close").Return()
+	mockDoor.On("Close").Return()
+
+	sc := NewSecurityCentral(&mockWindow, &mockDoor)
+	sc.SecurityOn()
+
+	mockWindow.AssertExpectations(t)
+	mockDoor.AssertExpectations(t)
+}
+```
+
 # 后记
 ## 总结
 如果你看得一头雾水的话，可以看下我的总结：
-* Fake - 着重"可工作"实现，可以用简单便捷的方式来实现, 逻辑功能不能缺，不能像stub那样编造数据，也不能像mock假执行。
+
+* Fake - 着重"可工作"实现，可以用简单便捷的方式来实现, 逻辑功能不能缺，不是像stub那样编造数据，也不是像mock那样假执行。
 * Stub - 返回预定义的数据。
-* Mock - 验证方法被执行了。
+* Mock - 验证动作被执行了。
   
-实际上stub返回数据，那对应方法肯定被执行了，mock也会执行方法，看上去mock像是不返回数据的stub的特例。
+实际上stub返回数据，那对应动作肯定被执行了，看上去mock像是不返回数据的stub的特例。
 
 原作者从"查询"和"命令"的角度去区分两者，"查询"返回数据，"命令"不返回数据。
 
-我到觉得有更本质的区别：
-**mock对象是待测试对象; 而stub对象不是，stub对象是为待测试对象做嫁衣。**
+## Source Code
+https://github.com/ryanking8215/test_doubles.git
 
 ## 不要混淆测试替身和库的命名
 无论是Java还是golang的例子，都可以看到，"stub"类型的测试替身可以由mock库(包)来实现。
 前者是"测试替身"类型，是从用处和用法出发的概念；后者是库，是具体的实现；在说明时不要混淆了。
 
 ## 吐槽
-Java下可以简单的使用mock对象，但是golang需要先建立interface, 测试替身才可以介入，但是很多时候，开发时的抽象是面向业务的，是适度和可控的，如果仅为了测试而增加interface，有过度设计的嫌疑，整个项目几乎不能看了。
+Java下可以简单的使用mock对象，但是golang需要先建立interface, 测试替身才可以介入，但是很多时候，开发时的抽象是面向业务的，是适度和可控的，如果仅为了测试而增加interface，有过度设计的嫌疑, 而且在go里找interface的实现也比较费劲(goLand可以有效协助，不过毕竟不是语言特性)。
 
 所以，在描述Stub那段，照搬Java的例子使用golang去实现，有点照猫画虎，如果为了验证AverageGrades方法是否正确
 
@@ -213,3 +299,4 @@ func (s *GradeService) averageGrades(scores []float32) float32 {
 * https://dev.to/milipski/test-doubles---fakes-mocks-and-stubs
 * https://zhuanlan.zhihu.com/p/26942686
 * https://github.com/utkarsh17ife/goMockPractice
+* https://github.com/ryanking8215/test_doubles.git
